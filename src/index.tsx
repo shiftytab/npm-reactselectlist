@@ -10,7 +10,7 @@ type ComponentPropsType = {
     options: Array<{ [key: string]: any }>,
 }
 
-export default function index({ label, placeholder, defaultValue, options, onChange } : ComponentPropsType) {
+export default function SelectList({ label, placeholder, defaultValue, options, onChange } : ComponentPropsType) {
 
     const [selected, setSelected] = useState<{[key: string] : string} | null>(null)
     const [show, setShow] = useState<boolean>(false);

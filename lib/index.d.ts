@@ -9,5 +9,5 @@ type ComponentPropsType = {
         [key: string]: any;
     }>;
 };
-export default function index({ label, placeholder, defaultValue, options, onChange }: ComponentPropsType): React.JSX.Element;
+export default function SelectList({ label, placeholder, defaultValue, options, onChange }: ComponentPropsType): React.JSX.Element;
 export {};

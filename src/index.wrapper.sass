@@ -1,0 +1,56 @@
+.container-select
+    position: relative
+    flex: 1
+    width: 100%
+
+    label 
+        font-size: 14px
+    .input-select
+        flex: 1
+        width: 100%
+        border: 1px solid #ccc
+        border-radius: 5px
+        display: flex
+        align-items: center
+
+        &:active, &:focus
+            border-color: rgba(0,0,0,.05)
+        .input-field
+            flex: 1
+            padding: 10px
+            .placeholder
+                opacity: .5
+        .input-icon
+            padding: 0 10px
+            border-left: 1px solid #ccc
+            margin-left: 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            
+            svg 
+                width: 18px
+                height: 18px
+
+    .dropdown-select
+        position: absolute
+        width: 100%
+        min-height: fit-content
+        left: 0
+        border: 1px solid #CCC
+        background-color: #FFF
+        border-radius: 5px
+        max-height: 350px
+        overflow-y: auto
+        z-index: 1000
+
+
+    .dropdown-item
+        padding: 10px
+        cursor: pointer
+        z-index: 100
+        color: #000
+
+        &:hover
+            background-color: rgba(0,0,0,.05)
+        
