@@ -17,16 +17,25 @@ export default function SelectList({ label, placeholder, defaultValue, options, 
 
     const dropdownRef = useRef<HTMLDivElement|null>(null);
 
+    /**
+     * Callback when option is selected
+     */
     const handleUpdateOption = (option : {[key: string] : string}) => {
         onChange(option);
         setSelected(option);
         setShow(false);
     }
 
+    /**
+     * Trigger dropdown select
+     */
     const handleTriggerDropdownSelect = () => {
         setShow(!show)
     }
 
+    /**
+     * Detect click outside dropdown
+     */
     const handleClickOutside = (event: MouseEvent) => {
         const target = event.target as HTMLElement;
         if (dropdownRef.current && !dropdownRef.current.contains(target)) {
@@ -34,24 +43,32 @@ export default function SelectList({ label, placeholder, defaultValue, options, 
         }
     }
 
+    /**
+     * Add event listener when dropdown is open
+     */
     useEffect(() => {
-
-        if(show) {
-            document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
-        }
-
+        (show) ? document.addEventListener("mousedown", handleClickOutside) :  document.removeEventListener("mousedown", handleClickOutside);
+        
+        /**
+         * Remove event listener when component is unmount
+         */
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [show]);
 
+    /**
+     * Set default value
+     */
     useEffect(() => {
         if(defaultValue || defaultValue === 0) {
             setSelected(options[defaultValue] ?? null);
         }
     }, [defaultValue])
+
+    /**
+     * Render component
+     */
 
     return options && (
         <div className="container-select">

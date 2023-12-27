@@ -1,6 +1,6 @@
 {
   "name": "@shiftytab/reactselectlist",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "type": "module",
   "dependencies": {
@@ -47,7 +47,15 @@
   "main": "lib/index.js",
   "author": "Rodrigo Ramos <42652709+shiftytab@users.noreply.github.com>",
   "license": "MIT",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "keywords": [
+    "react",
+    "react-component",
+    "select",
+    "dropdown",
+    "custom-select",
+    "custom-dropdown"
+  ],
+  "description": "A React component that renders a select list with a custom dropdown",
   "directories": {
     "lib": "lib"
   }
